@@ -12,7 +12,7 @@ pipeline{
             steps{
                 sh 'hostname -i'
                 echo "This line is in master branch"
-                echo "The username of this machine is ${hostname}"
+                //echo "The username of this machine is ${hostname}"
             }
         }
         }
