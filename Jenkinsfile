@@ -7,12 +7,14 @@ pipeline{
                 steps{
                     echo "This Pipeline is working"
                     }
-                steps{
-                    echo "This line is in Dev Branch"
-                    sh 'last reboot'
-
-                }
                  }
+        stage('Test'){
+            steps{
+                sh 'hostname -i'
+                echo "This line is in master branch"
+                echo "The username of this machine is ${hostname}"
+            }
+        }
         }
 
 }
