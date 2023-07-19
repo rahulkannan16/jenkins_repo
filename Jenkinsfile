@@ -1,13 +1,15 @@
 node{
-    if(env.BRANCH_NAME == 'main'){
-        stage('Build Main'){
-            echo "Building Master"
+	stage("Build"){
+		if(env.TAG_NAME != null){
+        	println("we are building a tag and tag is ${env.TAG_NAME}")
+        	}
+        	
+        else{
+        	println("we are building a branch")
+        	}
+        	
+        if(env.TAG_NAME == "release-1.0"){
+        	println("we are building specifically release tag 1.0")
+        	}
         }
-    }
-
-    if(env.BRANCH_NAME == 'dev'){
-        stage('Build Dev'){
-            echo "Building Dev"
-        }
-    }
 }
