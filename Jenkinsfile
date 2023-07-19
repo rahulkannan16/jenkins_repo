@@ -1,6 +1,6 @@
 node{
-    if(env.BRANCH_NAME == 'master'){
-        stage('Build Master'){
+    if(env.BRANCH_NAME == 'main'){
+        stage('Build Main'){
             echo "Building Master"
         }
     }
